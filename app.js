@@ -23,6 +23,7 @@ const notificationsRoutes = require("./routes/notificationRoutes");
 const movieTrasncations = require("./routes/movieTrasncationsRoute");
 const suportRoutes = require("./routes/suportRoute");
 const purchaseRoutes = require("./routes/purchaseRoutes");
+const joinUsRoutes = require("./routes/joinUsRoutes")
 const currentUserMovieRoute = require("./routes/currentUserMovieRoute");
 const mongoose = require("mongoose");
 
@@ -183,7 +184,7 @@ app.use("/api/v1/trasncations", movieTrasncations);
 app.use("/api/v1/suport", suportRoutes);
 app.use("/api/v1/purchase", purchaseRoutes);
 app.use("/api/v1/current-user-movie", currentUserMovieRoute);
-
+app.use("/api/v1/joinUs",joinUsRoutes);
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });

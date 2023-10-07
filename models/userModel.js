@@ -100,6 +100,11 @@ const userSchema = new mongoose.Schema({
   userType: {
     type: String,
   },
+  sourceoflogin: {
+    type: String,
+    enum: ["M", "E"],
+    default: null, // Set a default value, or you can omit this line if there's no default value.
+  },
   createdAt: {
     type: Date,
     default: Date.now,
